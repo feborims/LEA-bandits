@@ -1,70 +1,38 @@
 # Trabalho LEA — Bandits
 
 **Aluna:** Fernanda Borim  
-**RA:** 770291
+**RA:** 770291  
 
-Este repositório reúne o código e o relatório do trabalho de LEA sobre **bandits e decisões sequenciais**.
+Este repositório contém os códigos e o relatório do Trabalho de LEA sobre problemas de *Multi-Armed Bandits*.
 
-## Objetivos
+## Objetivo
 
 O trabalho é dividido em duas partes:
 
-1. **Inferência após seleção:** avaliação da cobertura de intervalos de confiança após a escolha do braço com maior média amostral.
-2. **Recompensa acumulada com dados de contagem:** comparação de políticas de bandits em um modelo Poisson para campanhas de divulgação.
+1. inferência após seleção em um experimento adaptativo;
+2. comparação de políticas de alocação em um problema com recompensas de contagem modeladas pela distribuição de Poisson.
 
 ## Políticas analisadas
 
-- Alocação uniforme aleatória
-- Greedy
-- UCB
-- Thompson Sampling
-- Epsilon-greedy, na Parte 2
+- alocação uniforme aleatória;
+- greedy;
+- UCB;
+- Thompson Sampling;
+- epsilon-greedy.
 
 ## Estrutura do repositório
 
-```text
-trabalho-lea-bandits/
-├── README.md
-├── requirements.txt
-├── codigos/
-│   └── codigos_bandits.ipynb
-└── relatorio/
-    └── relatorio_bandits.pdf
-```
+- `codigos_bandits.ipynb`: notebook com as simulações, análises, tabelas e gráficos;
+- `relatorio_bandits.pdf`: relatório final do trabalho;
+- `requirements.txt`: bibliotecas utilizadas no notebook;
+- `README.md`: descrição geral do repositório.
 
-## Como executar o notebook
+## Execução
 
-O código foi desenvolvido em **Python** e organizado em um notebook `.ipynb`, compatível com Google Colab e Jupyter Notebook.
+O código foi desenvolvido em Python e organizado em um notebook `.ipynb`.
 
-### Google Colab
+Para reproduzir as análises, basta executar as células na ordem em que aparecem.
 
-1. Abra o Google Colab.
-2. Selecione **Arquivo > Fazer upload de notebook**.
-3. Envie o arquivo `codigos/codigos_bandits.ipynb`.
-4. Execute as células na ordem apresentada.
+## Relatório
 
-### Ambiente local
-
-Instale as dependências:
-
-```bash
-pip install -r requirements.txt
-```
-
-Depois, abra o notebook com Jupyter Notebook ou JupyterLab.
-
-## Configuração das simulações
-
-Nos experimentos principais, foi utilizado horizonte `T = 500`.
-
-- Parte 1: 5.000 repetições por política.
-- Parte 2: 1.000 repetições por política.
-- Semente global: `770291`.
-
-O notebook contém as justificativas metodológicas, as simulações, as tabelas e os gráficos utilizados no relatório.
-
-## Principais resultados
-
-Na Parte 1, os intervalos usuais aplicados ao braço selecionado apresentaram cobertura inferior à nominal em várias políticas, evidenciando o efeito da seleção sobre a inferência.
-
-Na Parte 2, Thompson Sampling obteve a maior recompensa acumulada média, seguido por UCB. A análise também mostrou o compromisso entre maximizar recompensa e estimar com precisão todos os parâmetros dos braços.
+O relatório apresenta a implementação das políticas, os resultados das simulações e a interpretação estatística dos principais achados.
